@@ -8,6 +8,8 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier',
+    'plugin:vue/vue3-recommended', // Use this if you have a Vue project
+    'plugin:prettier/recommended', // Integrates Prettier with ESLint
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -15,7 +17,13 @@ module.exports = {
   rules: {
     'vue/multi-word-component-names': 'off',
     'no-undef': 'off',
-    trailingComma: 'on',
-    singleQuote: 'on',
+    'indent': ['error', 2], // Enforce 2 spaces for indentation
+    'prettier/prettier': [
+      'error',
+      {
+        tabWidth: 2, // Use 2 spaces
+        useTabs: false, // Use spaces, not tabs
+      },
+    ],
   },
 };
