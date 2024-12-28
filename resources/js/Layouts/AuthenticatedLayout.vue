@@ -192,10 +192,16 @@ const showingNavigationDropdown = ref(false);
     <Sidebar />
 
     <div class="p-4 sm:ml-64">
+      <!-- Page Heading -->
+      <header v-if="$slots.header" class="bg-white shadow dark:bg-gray-800">
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <slot name="header" />
+        </div>
+      </header>
 
       <!-- Page Content -->
       <main>
-        <slot />
+        <slot name="content" />
       </main>
     </div>
   </div>
