@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
         'show' => 'items.show',
         'store' => 'items.store',
         'update' => 'items.update',
+        'destroy' => 'items.destroy',
     ]);
 });
 

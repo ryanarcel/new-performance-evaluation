@@ -43,4 +43,12 @@ class ToolItemController extends Controller
         return to_route('tools.show', $request->tool_id);
     }
 
+    public function destroy (string $id)
+    {
+        $item = ToolItem::findOrFail($id);
+        $item->delete();
+
+        return to_route('tools.show', $id);
+    }
+
 }
