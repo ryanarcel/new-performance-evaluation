@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\ToolsController;
+use App\Http\Controllers\ToolItemController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -22,6 +24,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::apiResource('tools', ToolsController::class)
+    ->only(['index', 'show'])
+    ->names([
+        'index' => 'tools.index',
+        'show' => 'tools.show',
+    ]);
+
+    Route::apiResource('/items', ToolItemController::class)
+    ->only(['index', 'show', 'store', 'update'])
+    ->names([
+        'index' => 'items.index',
+        'show' => 'items.show',
+        'store' => 'items.store',
+        'update' => 'items.update',
+    ]);
 });
 
 require __DIR__.'/auth.php';

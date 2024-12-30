@@ -15,7 +15,7 @@ class Tool extends Model
  //  public function $evaluation
 
     public function items(){
-        return $this->hasMany("App\Models\ToolItem");
+        return $this->hasMany(ToolItem::class);
     }
     
     public function categories(){

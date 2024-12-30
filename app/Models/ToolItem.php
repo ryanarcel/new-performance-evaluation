@@ -2,11 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class ToolItem extends Model
 {
+    use HasFactory;
+
     protected $table= 'tool_items';
+
+    protected $fillable = [
+        'tool_id',
+        'statement',
+    ];
 
     public function tool(){
         return $this->belongsTo("App\Models\Tool", "tool_id");

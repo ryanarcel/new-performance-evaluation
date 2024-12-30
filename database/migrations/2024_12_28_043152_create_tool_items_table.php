@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('tool_items', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tool_id');
-            $table->foreign('tool_id')->references('id')->on('tools')->onDelete('cascade');
+            $table->unsignedBigInteger('tool_id')->nullable();
+            $table->foreign('tool_id')->references('id')->on('tools')->onDelete('set null');
             $table->text('statement');
             $table->timestamps();
         });

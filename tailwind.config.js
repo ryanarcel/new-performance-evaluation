@@ -32,6 +32,16 @@ export default {
           DEFAULT: '#e7e5e4', // A muted gray for general usage
           dark: '#57534e', // A darker gray for text or accents
         },
+        success: {
+          light: '#2b9e66', // A light green for success messages
+          DEFAULT: '#0f9d58', // A vivid green for success indicators
+          dark: '#0a7e49', // A deep green for contrast
+        },
+        danger: {
+          light: '#e55353', // A light red for error messages
+          DEFAULT: '#e31c3d', // A vivid red for error indicators
+          dark: '#a30b2c', // A deep red for contrast
+        },
       },
     },
   },
