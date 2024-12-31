@@ -49,10 +49,10 @@ const showingNavigationDropdown = ref(false);
           </a>
           <ul v-if="showingNavigationDropdown" class="ml-4 space-y-2 py-2">
             <li>
-              <a
-                href="#"
+              <Link
+                :href="route('administrator_evaluees.index')"
                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-white transition duration-75 hover:bg-primary-light dark:text-white dark:hover:bg-gray-700"
-                >Administrator</a
+                >Administrator</Link
               >
             </li>
             <li>

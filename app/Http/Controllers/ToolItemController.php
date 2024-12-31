@@ -48,7 +48,8 @@ class ToolItemController extends Controller
         $item = ToolItem::findOrFail($id);
         $item->delete();
 
-        return to_route('tools.show', $id);
+        // return to_route('tools.show', $id);
+        return redirect()->back();
     }
 
 }

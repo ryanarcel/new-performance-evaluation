@@ -117,7 +117,7 @@ function deleteItem(itemId: number) {
       </form>
 
       <ul
-        class="mt-5 max-w-md list-inside list-disc space-y-1 text-gray-500 dark:text-gray-400"
+        class="mt-5 w-full list-inside list-disc space-y-1 text-gray-500 dark:text-gray-400"
       >
         <li
           v-for="item in tool.data.items"
