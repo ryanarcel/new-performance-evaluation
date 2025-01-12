@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import CommonTable from '@/Components/Custom/CommonTable.vue';
+import CommonDataTable from '@/Components/Custom/CommonDataTable.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
+// import { onMounted } from 'vue'; 
 
 const props = defineProps<{
   evaluees: any;
 }>();
+
 </script>
 <template>
   <Head title="Performance Evaluation" />
@@ -14,10 +16,10 @@ const props = defineProps<{
       <h1 class="font-bold">Administrators</h1>
     </template>
     <template #content>
-      <CommonTable
-        :data="evaluees.data"
+      <CommonDataTable
+        :data="evaluees"
         :search-placehodler="'Search by name'"
-      ></CommonTable>
+      ></CommonDataTable>
     </template>
   </AuthenticatedLayout>
 </template>

@@ -14,8 +14,13 @@ class AdministratorEvalueeController extends Controller
      */
     public function index()
     {
+
+        $evaluees = Evaluee::query();
+
+        $evaluees->where('rank', 'Administrator');
+
         return Inertia::render('Evaluees/Administrator', [
-            'evaluees' =>  EvalueeResource::collection(Evaluee::where('rank', 'Administrator')->get())
+            'evaluees' =>  EvalueeResource::collection($evaluees->paginate(5))
         ]);
 
     }
